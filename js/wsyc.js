@@ -41,18 +41,19 @@ var wsyc = {
         if(data == "success") {
             alert("success");
         } else if(data != "Timeout") {
-            var timeout = 60000 + parseInt(15 * Math.random());
+            var timeout = $("#timeout").val();
+            var interval = parseInt(timeout) * 1000 + parseInt(1000 * Math.random());
             if(wsyc.totalCount_ >= 15) {
-                timeout = 300000;
+                interval= 100000;
             };
-            setTimeout("wsyc.btnWsycClick()", timeout);
+            setTimeout("wsyc.btnWsycClick()", interval);
         } else {
             alert("timeout"); 
         }
     }
 };
 
-var html = '<table> <tr> <td>日期:</td> <td><input type="text" id="date" value="2014-11-03" /></td> <td>格式: 2014-01-01 </td> </tr> <tr> <td>开始时段:</td> <td><input type="text" id="start" value="17" /></td> <td>格式: 17 </td> </tr> <tr> <td>结束时段:</td> <td><input type="text" id="end" value="19" /></td> <td>格式: 19 </td> </tr> <tr> <td>时段编号:</td> <td><input type="text" id="trainsessionid" value="04" /></td> <td>01(7-9) 02(9-13) 03(13-17) 04(17-19) 05(19-21) </td> </tr> <tr> <td>训练阶段编号:</td> <td><input type="text" id="lessionid" value="001" /></td> <td>001(散段) 002(桩训) 003(法培) 006(模拟机) 007(综合训练) 008(考前培训) </td> </tr> </table>'
+var html = '<table> <tr> <td>日期:</td> <td><input type="text" id="date" value="2014-11-03" /></td> <td>格式: 2014-01-01 </td> </tr> <tr> <td>开始时段:</td> <td><input type="text" id="start" value="17" /></td> <td>格式: 17 </td> </tr> <tr> <td>结束时段:</td> <td><input type="text" id="end" value="19" /></td> <td>格式: 19 </td> </tr> <tr> <td>时段编号:</td> <td><input type="text" id="trainsessionid" value="04" /></td> <td>01(7-9) 02(9-13) 03(13-17) 04(17-19) 05(19-21) </td> </tr> <tr> <td>训练阶段编号:</td> <td><input type="text" id="lessionid" value="001" /></td> <td>001(散段) 002(桩训) 003(法培) 006(模拟机) 007(综合训练) 008(考前培训) </td> </tr> <tr> <td>刷课频率:</td> <td><input type="text" id="timeout" value="10" /></td> <td>多快刷一次, 单位: 秒。注意: 刷太快容易被短暂封号</td> </tr> </table>'
 
 var divWsyc = $(".ZF_xy_main");
 $(html).appendTo(divWsyc);
