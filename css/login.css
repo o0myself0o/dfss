@@ -1,0 +1,2 @@
+.submit{width:91px; height:39px; line-height:39px; background:url(../img/btn.png) 0 0 no-repeat; border:none; text-align:center; color:#fff; font-weight:bold; cursor:pointer; font-size:15px; color:#333;}
+.submit:hover{background:url(../img/btn.png) 0 -40px no-repeat; border:none;}

@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "dfss_ticket",
+    "description": "dfss ticket",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": ["http://111.204.39.58:8080/login-pc.aspx"],
+            "js": ["js/jquery.js", "js/util.js", "css/login.css", "js/login.js"]
+        },
+        {
+            "matches": ["http://111.204.39.58:8080/pc-client/jbxx.aspx"],
+            "js": ["js/jquery.js", "js/jbxx.js"]
+        },
+        {
+            "matches": ["http://111.204.39.58:8080/pc-client/wsyc.aspx*"],
+            "js": ["js/jquery.js", "js/util.js", "css/login.css", "js/wsyc.js"]
+        }
+    ],
+    "permissions": [
+        "http://111.204.39.58:8080/*",
+        "webRequest",
+        "webRequestBlocking",
+        "tabs"
+    ],
+    "browser_action": {
+        "default_icon": "img/icon.png"
+    }
+}
